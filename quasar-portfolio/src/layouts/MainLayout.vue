@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header bordered>
       <q-toolbar>
         <q-btn flat denses color="white" icon="menu" class="lt-sm">
           <q-menu transition-show="scale" transition-hide="scale">
@@ -13,6 +13,10 @@
                 v-ripple
                 v-close-popup
               >
+                <q-item-section avatar>
+                  <q-icon :name="navItem.icon" color="primary" size="20px" />
+                </q-item-section>
+
                 <q-item-section>{{ navItem.name }}</q-item-section>
               </q-item>
             </q-list>
@@ -52,26 +56,32 @@ const navLinks = ref([
   {
     name: "Home",
     to: "home",
+    icon: "home",
   },
   {
     name: "Projects",
     to: "projects",
+    icon: "terminal",
   },
   {
     name: "Technologies",
     to: "technologies",
+    icon: "memory",
   },
   {
     name: "Dev Tools",
     to: "devTools",
+    icon: "build",
   },
   {
     name: "About",
     to: "about",
+    icon: "person",
   },
   {
     name: "Contact",
     to: "contact",
+    icon: "mail",
   },
 ]);
 </script>

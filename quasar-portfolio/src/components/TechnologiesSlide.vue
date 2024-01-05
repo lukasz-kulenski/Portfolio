@@ -1,5 +1,5 @@
 <template>
-  <div class="q-gutter-lg flex justify-center">
+  <div class="q-gutter-lg flex justify-center q-py-md">
     <q-card
       v-for="item in technologiesItems"
       :key="item.name"

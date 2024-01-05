@@ -1,36 +1,54 @@
 <template>
-  <div class="q-mt-md text-center">
-    <span class="text-h6">Send Me a Message</span>
-
-    <q-form @submit="onSubmit" method="post" action="" class="q-gutter-md">
+  <div class="row justify-center">
+    <q-form
+      @submit="sendMessage"
+      @keyup.enter="sendMessage"
+      class="q-gutter-xs q-mt-lg col-12 col-md-6"
+      style="margin: 0 auto"
+    >
+      <span class="text-h6">Send Me a Message</span>
       <q-input
-        filled
-        v-model="name"
-        label="Your name *"
-        hint="Name and surname"
+        dense
+        outlined
+        rounded
+        v-model="message.name"
         lazy-rules
+        label="Your name *"
         :rules="[(val) => (val && val.length > 0) || 'Please type something']"
       />
 
       <q-input
-        filled
-        type="number"
-        v-model="age"
-        label="Your age *"
+        dense
+        outlined
+        rounded
+        autogrow
+        counter
+        v-model="message.content"
         lazy-rules
-        :rules="[
-          (val) => (val !== null && val !== '') || 'Please type your age',
-          (val) => (val > 0 && val < 100) || 'Please type a real age',
-        ]"
+        label="Your message *"
+        :rules="[(val) => (val && val.length > 0) || 'Please type something']"
       />
 
-      <div>
-        <q-btn label="Submit" type="submit" color="primary" />
+      <div class="text-center">
+        <q-btn
+          no-caps
+          padding="8px 60px"
+          label="Send"
+          type="submit"
+          color="primary"
+        />
       </div>
     </q-form>
-
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+
+const message = ref({
+  name: "",
+  content: "",
+});
+
+const sendMessage = () => {};
 </script>

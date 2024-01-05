@@ -1,67 +1,128 @@
-<template>
-  <q-page class="q-pa-xs">
+<!-- <template>
+  <q-page class="">
     <q-carousel
       v-model="slide"
       vertical
       swipeable
       animated
+      control-color="primary"
       transition-prev="slide-down"
       transition-next="slide-up"
-      class="text"
       transition-duration="600"
-      height="max-content"
+      height="80vh"
     >
       <q-carousel-slide name="home" class="column no-wrap flex-center">
-        <q-icon name="home" color="primary" size="40px" />
         <div class="q-mt-md text-center">
           <HomeSlide />
         </div>
       </q-carousel-slide>
       <q-carousel-slide name="projects" class="column no-wrap flex-center">
-        <q-icon name="terminal" color="primary" size="40px" />
+        <q-icon name="terminal" color="primary" size="40px" class="" />
         <div class="q-mt-md text-center">
           <ProjectsSlide />
         </div>
       </q-carousel-slide>
       <q-carousel-slide name="technologies" class="column no-wrap flex-center">
-        <q-icon name="memory" color="primary" size="40px" />
+        <q-icon name="memory" color="primary" size="40px" class="" />
         <div class="q-mt-md text-center">
-         <TechnologiesSlide />
+          <TechnologiesSlide />
         </div>
       </q-carousel-slide>
       <q-carousel-slide name="devTools" class="column no-wrap flex-center">
-        <q-icon name="build" color="primary" size="40px" />
+        <q-icon name="build" color="primary" size="40px" class="" />
         <div class="q-mt-md text-center">
-        <DevToolsSlide />
+          <DevToolsSlide />
         </div>
       </q-carousel-slide>
       <q-carousel-slide name="about" class="column no-wrap flex-center">
-        <q-icon name="person" color="primary" size="40px" />
+        <q-icon name="person" color="primary" size="40px" class="" />
         <div class="q-mt-md text-center">
-         <AboutSlide />
+          <AboutSlide />
         </div>
       </q-carousel-slide>
       <q-carousel-slide name="contact" class="column no-wrap flex-center">
-        <q-icon name="mail" color="primary" size="40px" />
+        <q-icon name="mail" color="primary" size="40px" class="" />
         <ContactSlide />
       </q-carousel-slide>
     </q-carousel>
   </q-page>
+</template> -->
+
+<template>
+  <div>
+    <q-tab-panels
+      v-model="tab"
+      animated
+      swipeable
+      vertical
+      transition-prev="slide-down"
+      transition-next="slide-up"
+      transition-duration="800"
+    >
+      <q-tab-panel name="home" class="text-center">
+        <q-scroll-area style="width: 100%; height: 80vh">
+          <HomeSlide />
+        </q-scroll-area>
+      </q-tab-panel>
+
+      <q-tab-panel name="projects" class="text-center">
+        <div class="text-h4 q-mb-md">Projects</div>
+        <q-scroll-area style="width: 100%; height: 80vh">
+          <ProjectsSlide />
+        </q-scroll-area>
+      </q-tab-panel>
+
+      <q-tab-panel name="technologies" class="text-center">
+        <div class="text-h4 q-mb-md ">Technologies</div>
+        <q-scroll-area style="width: 100%; height: 80vh">
+          <TechnologiesSlide />
+        </q-scroll-area>
+      </q-tab-panel>
+
+      <q-tab-panel name="devTools" class="text-center">
+        <div class="text-h4 q-mb-md">Dev Tools</div>
+        <q-scroll-area style="width: 100%; height: 80vh">
+          <DevToolsSlide />
+        </q-scroll-area>
+      </q-tab-panel>
+
+      <q-tab-panel name="about" class="text-center">
+        <div class="text-h4 q-mb-md">About</div>
+        <q-scroll-area style="width: 100%; height: 80vh">
+          <AboutSlide />
+        </q-scroll-area>
+      </q-tab-panel>
+
+      <q-tab-panel name="contact" class="text-center">
+        <div class="text-h4 q-mb-md">Contact</div>
+        <q-scroll-area style="width: 100%; height: 80vh">
+          <ContactSlide />
+        </q-scroll-area>
+      </q-tab-panel>
+    </q-tab-panels>
+  </div>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useNavBarStore } from "stores/navBarStore";
-import HomeSlide from '../components/HomeSlide'
-import ProjectsSlide from '../components/ProjectsSlide'
-import TechnologiesSlide from '../components/TechnologiesSlide'
-import DevToolsSlide from '../components/DevToolsSlide'
-import AboutSlide from '../components/AboutSlide'
-import ContactSlide from '../components/ContactSlide'
+import HomeSlide from "../components/HomeSlide";
+import ProjectsSlide from "../components/ProjectsSlide";
+import TechnologiesSlide from "../components/TechnologiesSlide";
+import DevToolsSlide from "../components/DevToolsSlide";
+import AboutSlide from "../components/AboutSlide";
+import ContactSlide from "../components/ContactSlide";
 
 const navBarStore = useNavBarStore();
 
-const slide = computed(() => {
+const tab = computed(() => {
   return navBarStore.currentNavItem;
 });
+
 </script>
+
+<style lang="scss">
+.q-page {
+  overflow: hidden !important;
+}
+</style>
