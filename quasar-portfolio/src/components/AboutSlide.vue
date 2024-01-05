@@ -1,6 +1,11 @@
 <template>
   <div class="q-pa-xs row">
-    <q-card class="my-card col-12 col-md-6" flat bordered style="margin: 0 auto;">
+    <q-card
+      class="my-card col-12 col-md-6"
+      flat
+      bordered
+      style="margin: 0 auto"
+    >
       <q-card-section horizontal>
         <q-card-section class="q-pt-xs">
           <div class="text-overline text-bold">Hello</div>
@@ -12,6 +17,19 @@
             functionality.
           </div>
         </q-card-section>
+      </q-card-section>
+
+      <q-separator />
+
+      <q-card-section>
+        <div class="text-caption text-grey text-justify">
+          In my future plans, I aim to develop several more applications,
+          totaling 4-6 in number. I aspire to continuously grow my skills in
+          various programming languages and explore new technologies that will
+          enable me to become a more proficient developer. As I progress in my
+          career, I remain open to learning and adapting to emerging
+          technologies
+        </div>
       </q-card-section>
 
       <q-separator />

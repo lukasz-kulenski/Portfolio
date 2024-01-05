@@ -66,35 +66,49 @@
       </q-tab-panel>
 
       <q-tab-panel name="projects" class="text-center">
-        <div class="text-h4 q-mb-md">Projects</div>
+        <div class="text-h4 q-mb-md">
+          Projects
+          <q-icon name="terminal" color="primary" size="37px" />
+        </div>
         <q-scroll-area style="width: 100%; height: 80vh">
           <ProjectsSlide />
         </q-scroll-area>
       </q-tab-panel>
 
       <q-tab-panel name="technologies" class="text-center">
-        <div class="text-h4 q-mb-md ">Technologies</div>
+        <div class="text-h4 q-mb-md">
+          Technologies
+          <q-icon name="memory" color="primary" size="37px" />
+        </div>
         <q-scroll-area style="width: 100%; height: 80vh">
           <TechnologiesSlide />
         </q-scroll-area>
       </q-tab-panel>
 
       <q-tab-panel name="devTools" class="text-center">
-        <div class="text-h4 q-mb-md">Dev Tools</div>
+        <div class="text-h4 q-mb-md">
+          Dev Tools
+          <q-icon name="build" color="primary" size="37px" />
+        </div>
         <q-scroll-area style="width: 100%; height: 80vh">
           <DevToolsSlide />
         </q-scroll-area>
       </q-tab-panel>
 
       <q-tab-panel name="about" class="text-center">
-        <div class="text-h4 q-mb-md">About</div>
+        <div class="text-h4 q-mb-md">
+          About
+          <q-icon name="person" color="primary" size="37px" />
+        </div>
         <q-scroll-area style="width: 100%; height: 80vh">
           <AboutSlide />
         </q-scroll-area>
       </q-tab-panel>
 
       <q-tab-panel name="contact" class="text-center">
-        <div class="text-h4 q-mb-md">Contact</div>
+        <div class="text-h4 q-mb-md">Contact
+          <q-icon name="mail" color="primary" size="37px" />
+        </div>
         <q-scroll-area style="width: 100%; height: 80vh">
           <ContactSlide />
         </q-scroll-area>
@@ -118,7 +132,6 @@ const navBarStore = useNavBarStore();
 const tab = computed(() => {
   return navBarStore.currentNavItem;
 });
-
 </script>
 
 <style lang="scss">
