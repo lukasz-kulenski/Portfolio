@@ -1,53 +1,3 @@
-<!-- <template>
-  <q-page class="">
-    <q-carousel
-      v-model="slide"
-      vertical
-      swipeable
-      animated
-      control-color="primary"
-      transition-prev="slide-down"
-      transition-next="slide-up"
-      transition-duration="600"
-      height="80vh"
-    >
-      <q-carousel-slide name="home" class="column no-wrap flex-center">
-        <div class="q-mt-md text-center">
-          <HomeSlide />
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide name="projects" class="column no-wrap flex-center">
-        <q-icon name="terminal" color="primary" size="40px" class="" />
-        <div class="q-mt-md text-center">
-          <ProjectsSlide />
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide name="technologies" class="column no-wrap flex-center">
-        <q-icon name="memory" color="primary" size="40px" class="" />
-        <div class="q-mt-md text-center">
-          <TechnologiesSlide />
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide name="devTools" class="column no-wrap flex-center">
-        <q-icon name="build" color="primary" size="40px" class="" />
-        <div class="q-mt-md text-center">
-          <DevToolsSlide />
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide name="about" class="column no-wrap flex-center">
-        <q-icon name="person" color="primary" size="40px" class="" />
-        <div class="q-mt-md text-center">
-          <AboutSlide />
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide name="contact" class="column no-wrap flex-center">
-        <q-icon name="mail" color="primary" size="40px" class="" />
-        <ContactSlide />
-      </q-carousel-slide>
-    </q-carousel>
-  </q-page>
-</template> -->
-
 <template>
   <div>
     <q-tab-panels
@@ -70,7 +20,11 @@
           Projects
           <q-icon name="terminal" color="primary" size="37px" />
         </div>
-        <q-scroll-area style="width: 100%; height: 80vh">
+        <q-scroll-area
+          :thumb-style="thumbStyle"
+          :bar-style="barStyle"
+          style="width: 100%; height: 80vh"
+        >
           <ProjectsSlide />
         </q-scroll-area>
       </q-tab-panel>
@@ -80,7 +34,12 @@
           Technologies
           <q-icon name="memory" color="primary" size="37px" />
         </div>
-        <q-scroll-area style="width: 100%; height: 80vh">
+        <q-scroll-area
+          class="q-pa-md"
+          :thumb-style="thumbStyle"
+          :bar-style="barStyle"
+          style="width: 100%; height: 80vh"
+        >
           <TechnologiesSlide />
         </q-scroll-area>
       </q-tab-panel>
@@ -90,7 +49,12 @@
           Dev Tools
           <q-icon name="build" color="primary" size="37px" />
         </div>
-        <q-scroll-area style="width: 100%; height: 80vh">
+        <q-scroll-area
+          class="q-pa-md"
+          :thumb-style="thumbStyle"
+          :bar-style="barStyle"
+          style="width: 100%; height: 80vh"
+        >
           <DevToolsSlide />
         </q-scroll-area>
       </q-tab-panel>
@@ -100,16 +64,27 @@
           About
           <q-icon name="person" color="primary" size="37px" />
         </div>
-        <q-scroll-area style="width: 100%; height: 80vh">
+        <q-scroll-area
+          class="q-pa-md"
+          :thumb-style="thumbStyle"
+          :bar-style="barStyle"
+          style="width: 100%; height: 80vh"
+        >
           <AboutSlide />
         </q-scroll-area>
       </q-tab-panel>
 
       <q-tab-panel name="contact" class="text-center">
-        <div class="text-h4 q-mb-md">Contact
+        <div class="text-h4 q-mb-md">
+          Contact
           <q-icon name="mail" color="primary" size="37px" />
         </div>
-        <q-scroll-area style="width: 100%; height: 80vh">
+        <q-scroll-area
+          class="q-pa-md"
+          :thumb-style="thumbStyle"
+          :bar-style="barStyle"
+          style="width: 100%; height: 80vh"
+        >
           <ContactSlide />
         </q-scroll-area>
       </q-tab-panel>
@@ -126,6 +101,9 @@ import TechnologiesSlide from "../components/TechnologiesSlide";
 import DevToolsSlide from "../components/DevToolsSlide";
 import AboutSlide from "../components/AboutSlide";
 import ContactSlide from "../components/ContactSlide";
+import { customScrollBar } from "src/composables/scrollBarStyles";
+
+const { thumbStyle, barStyle } = customScrollBar().useCustomScrollBar();
 
 const navBarStore = useNavBarStore();
 

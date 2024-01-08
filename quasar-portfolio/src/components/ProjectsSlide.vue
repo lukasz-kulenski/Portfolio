@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="row">
     <q-carousel
       v-model="project"
       transition-prev="slide-left"
@@ -11,8 +11,8 @@
       padding
       arrows
       infinite
-      height="450px"
-      class="text-black"
+      class="text-black col-11"
+      style="margin: 0 auto"
     >
       <q-carousel-slide
         v-for="project in projectsItems"
@@ -20,11 +20,16 @@
         :name="project.name"
         class="column no-wrap flex-center"
       >
-        <q-card flat bordered class="my-card" style="min-width: 240px">
+        <q-card
+          flat
+          bordered
+          class="my-card"
+          style="min-width: 240px; max-width: 450px"
+        >
           <q-card-section>
             <div class="row items-center no-wrap">
               <div class="col">
-                <div class="text-h6 text-left">{{ project.title }}</div>
+                <div class="text-h6">{{ project.title }}</div>
               </div>
             </div>
           </q-card-section>
@@ -32,37 +37,49 @@
           <q-separator inset />
 
           <q-card-section>
-            <div>
-              {{ project.working }}
+            <span class="text-h6 text-left">About the App</span>
+            <div class="text-justify">
+              {{ project.description }}
             </div>
           </q-card-section>
 
           <q-card-section>
-            <div>
-              {{ project.plans ? project.plans : "" }}
+            <span class="text-h6 text-left">Future Plans</span>
+            <div class="text-justify">
+              {{ project.futurePlans }}
             </div>
           </q-card-section>
 
           <q-separator />
 
-          <q-card-section class="row">
-            <div class="text-left q-gutter-sm col-6">
-              <q-img width="40%" src="../assets/github.svg" />
-              <q-img width="40%" src="../assets/netlify.svg" />
+          <q-card-section class="row q-pa-sm">
+            <div class="text-left q-gutter-sm flex">
+              <a :href="project.githubLink" target="_blank">
+                <q-img
+                  src="../assets/github.svg"
+                  style="width: 30px; height: 30px"
+                />
+              </a>
+
+              <a :href="project.netlifyLink" target="_blank">
+                <q-img
+                  src="../assets/netlify.svg"
+                  style="width: 30px; height: 30px"
+                />
+              </a>
             </div>
-            <div class="text-right col-6">
-              <span class="">{{
+
+            <div>
+              <span class="absolute-bottom-right q-pa-sm">{{
                 project.completed
                   ? "project completed"
-                  : "project in developmenet"
+                  : "project in development"
               }}</span>
             </div>
           </q-card-section>
         </q-card>
       </q-carousel-slide>
     </q-carousel>
-
-    <q-img width="50%" src="../assets/project.svg" style="margin: 0 auto" />
   </div>
 </template>
 
@@ -73,21 +90,29 @@ const project = ref("justEat");
 
 const projectsItems = ref([
   {
-    title: "Just Eat",
-    name: 'justEat',
+    title: "JustEat",
+    name: "justEat",
     completed: true,
-    githubLink: "link to github",
-    netlifyLink: "link to netlify",
-    working: "działa tak tak i tak działa tak tak i tak działa tak tak i tak działa tak tak i tak działa tak tak i tak",
+    githubLink: "https://github.com/Azgeda-debug/JustEat",
+    netlifyLink: "https://just-eat-azgeda.netlify.app/",
+    description: `This is a simple app designed to calculate daily macronutrients. I created the app to make tracking my daily macronutrients easier.
+      While there are many similar apps on the market, none of them met my specific requirements. Therefore, I developed my own application that allows users to personalize it according to their individual preferences.
+      The app is user-friendly, and in case someone encounters difficulties, they can refer to the instructions provided in the 'App Info' section.
+      Users have the option to search for a product in the existing product database or add their own products to a personalized database (my preferred method).`,
+    futurePlans: `As of now, the project is completed. However, I may consider adding more features in the future`,
   },
   {
-    title: "Just Chat",
-    name: 'justChat',
+    title: "JustChat",
+    name: "justChat",
     completed: false,
-    githubLink: "link to github",
-    netlifyLink: "link to netlify",
-    working: "działa tak tak i tak działa tak tak i tak działa tak tak i tak działa tak tak i tak działa tak tak i tak działa tak tak i tak",
-    plans: "plany takie takie i takie plany takie takie i taki plany takie takie i taki plany takie takie i taki plany takie takie i taki plany takie takie i taki plany takie takie i taki",
+    githubLink: "https://github.com/azgeda-debug/JustChatAzgeda",
+    netlifyLink: "https://justchat-azgeda.netlify.app/#/",
+    description: `The JustChat app combines some features from Messenger and WhatsApp.
+     The main purpose of this project was to create an application that showcases my skills.
+     Currently, the app consists of two main pages. The first is the users' page, where you can search for a specific user or engage in conversations with users you already have. The second is the chat page, allowing you to customize your chat experience.
+      Additionally, the app features a settings page where you can tailor the application to meet your specific requirements.`,
+    futurePlans: `I definitely plan to add more interesting features to the app, such as additional settings, the option to send photos and files, notifications, and perhaps more themes.
+      I am eager to further develop the JustChat app and simultaneously work on other applications.`,
   },
 ]);
 </script>
