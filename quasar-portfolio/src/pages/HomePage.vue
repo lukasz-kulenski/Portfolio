@@ -1,14 +1,7 @@
 <template>
   <div>
-    <q-tab-panels
-      v-model="tab"
-      animated
-      swipeable
-      vertical
-      transition-prev="slide-down"
-      transition-next="slide-up"
-      transition-duration="800"
-    >
+    <q-tab-panels v-model="tab" animated swipeable transition-prev="slide-down" transition-next="slide-up"
+      transition-duration="800">
       <q-tab-panel name="home" class="text-center">
         <q-scroll-area style="width: 100%; height: 80vh">
           <HomeSlide />
@@ -20,11 +13,7 @@
           Projects
           <q-icon name="terminal" color="primary" size="37px" />
         </div>
-        <q-scroll-area
-          :thumb-style="thumbStyle"
-          :bar-style="barStyle"
-          style="width: 100%; height: 80vh"
-        >
+        <q-scroll-area class="q-pa-md" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
           <ProjectsSlide />
         </q-scroll-area>
       </q-tab-panel>
@@ -34,12 +23,7 @@
           Technologies
           <q-icon name="memory" color="primary" size="37px" />
         </div>
-        <q-scroll-area
-          class="q-pa-md"
-          :thumb-style="thumbStyle"
-          :bar-style="barStyle"
-          style="width: 100%; height: 80vh"
-        >
+        <q-scroll-area class="q-pa-md" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
           <TechnologiesSlide />
         </q-scroll-area>
       </q-tab-panel>
@@ -49,12 +33,7 @@
           Dev Tools
           <q-icon name="build" color="primary" size="37px" />
         </div>
-        <q-scroll-area
-          class="q-pa-md"
-          :thumb-style="thumbStyle"
-          :bar-style="barStyle"
-          style="width: 100%; height: 80vh"
-        >
+        <q-scroll-area class="q-pa-md" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
           <DevToolsSlide />
         </q-scroll-area>
       </q-tab-panel>
@@ -64,12 +43,7 @@
           About
           <q-icon name="person" color="primary" size="37px" />
         </div>
-        <q-scroll-area
-          class="q-pa-md"
-          :thumb-style="thumbStyle"
-          :bar-style="barStyle"
-          style="width: 100%; height: 80vh"
-        >
+        <q-scroll-area class="q-pa-md" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
           <AboutSlide />
         </q-scroll-area>
       </q-tab-panel>
@@ -79,12 +53,7 @@
           Contact
           <q-icon name="mail" color="primary" size="37px" />
         </div>
-        <q-scroll-area
-          class="q-pa-md"
-          :thumb-style="thumbStyle"
-          :bar-style="barStyle"
-          style="width: 100%; height: 80vh"
-        >
+        <q-scroll-area class="q-pa-md" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
           <ContactSlide />
         </q-scroll-area>
       </q-tab-panel>
@@ -111,9 +80,3 @@ const tab = computed(() => {
   return navBarStore.currentNavItem;
 });
 </script>
-
-<style lang="scss">
-.q-page {
-  overflow: hidden !important;
-}
-</style>

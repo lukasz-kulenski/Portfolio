@@ -37,10 +37,10 @@
       <q-card-actions>
         <q-list>
           <q-item class="text-bold text-body1"> My skills:</q-item>
-          <q-item> Vue 3: Intermediate</q-item>
-          <q-item> JS: Intermediate</q-item>
-          <q-item> CSS 3: Intermediate</q-item>
           <q-item> HTML 5: Intermediate</q-item>
+          <q-item> CSS 3: Intermediate</q-item>
+          <q-item> JS: Intermediate</q-item>
+          <q-item> Vue 3: Intermediate</q-item>
           <q-item> Quasar 2: Intermediate</q-item>
           <q-item> Git: Beginner</q-item>
         </q-list>
