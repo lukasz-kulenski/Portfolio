@@ -11,8 +11,8 @@
           <div class="text-overline text-bold">Hello</div>
           <div class="text-h5 q-mt-sm q-mb-xs">I'm Łukasz</div>
           <div class="text-caption text-grey text-justify">
-            I'm a passionate programmer with a journey that began in October
-            2023. At 21 years old, I specialize in front-end development,
+            I'm residing in a small village in Poland. I'm a passionate programmer with a journey that began in October
+            2022. At 21 years old, I specialize in front-end development,
             crafting seamless user experiences with a keen eye for design and
             functionality.
           </div>

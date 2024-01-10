@@ -55,6 +55,9 @@
 <script setup>
 import { ref } from "vue";
 import emailjs from 'emailjs-com';
+import { useQuasar } from 'quasar'
+
+const $q = useQuasar()
 
 const tab = ref('message')
 
@@ -73,9 +76,16 @@ const sendMessage = (e) => {
     message: message.value.content,
   })
     .then((result) => {
-      console.log('SUCCESS!', result.text);
+      $q.notify({
+        type: 'positive',
+        message: 'Message sent.'
+      })
+
     }, (error) => {
-      console.log('FAILED...', error.text);
+      $q.notify({
+        type: 'negative',
+        message: 'Error, try again later.'
+      })
     });
 
 
@@ -83,5 +93,6 @@ const sendMessage = (e) => {
     name: '',
     content: '',
   }
+
 };
 </script>
