@@ -5,14 +5,8 @@
         <q-btn flat denses color="white" icon="menu" class="lt-sm">
           <q-menu transition-show="scale" transition-hide="scale">
             <q-list>
-              <q-item
-                @click="navBarStore.currentNavItem = navItem.to"
-                v-for="navItem in navLinks"
-                :key="navItem.name"
-                clickable
-                v-ripple
-                v-close-popup
-              >
+              <q-item @click="navBarStore.currentNavItem = navItem.to" v-for="navItem in navLinks" :key="navItem.name"
+                clickable v-ripple v-close-popup>
                 <q-item-section avatar>
                   <q-icon :name="navItem.icon" color="primary" size="20px" />
                 </q-item-section>
@@ -25,14 +19,8 @@
 
         <div class="gt-xs full-width">
           <q-list dense class="flex justify-end">
-            <q-item
-              @click="navBarStore.currentNavItem = navItem.to"
-              v-for="navItem in navLinks"
-              :key="navItem.name"
-              clickable
-              v-ripple
-              class="items-center text-bold"
-            >
+            <q-item @click="navBarStore.currentNavItem = navItem.to" v-for="navItem in navLinks" :key="navItem.name"
+              clickable v-ripple class="items-center text-bold">
               {{ navItem.name }}
             </q-item>
           </q-list>
@@ -69,8 +57,8 @@ const navLinks = ref([
     icon: "memory",
   },
   {
-    name: "Dev Tools",
-    to: "devTools",
+    name: "Tools",
+    to: "tools",
     icon: "build",
   },
   {

@@ -1,11 +1,6 @@
 <template>
   <div class="q-px-xs q-py-lg row">
-    <q-card
-      class="my-card col-12 col-md-6"
-      flat
-      bordered
-      style="margin: 0 auto"
-    >
+    <q-card class="my-card col-12 col-md-6" flat bordered style="margin: 0 auto">
       <q-card-section horizontal>
         <q-card-section class="q-pt-xs">
           <div class="text-overline text-bold">Hello</div>
@@ -43,6 +38,8 @@
           <q-item> Vue 3: Intermediate</q-item>
           <q-item> Quasar 2: Intermediate</q-item>
           <q-item> Git: Beginner</q-item>
+          <q-item> Firebase</q-item>
+          <q-item> Rest Api</q-item>
         </q-list>
       </q-card-actions>
     </q-card>

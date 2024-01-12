@@ -33,17 +33,10 @@ const devToolsItems = ref([
     icon: require("../assets/vueDevtools.png"),
   },
   {
-    name: "Firebase",
-    icon: require("../assets/firebase.svg"),
-  },
-  {
     name: "Netlify",
     icon: require("../assets/netlify.svg"),
   },
-  {
-    name: 'Rest Api',
-    icon: require("../assets/restApi.svg"),
-  }
+
 ]);
 </script>
   

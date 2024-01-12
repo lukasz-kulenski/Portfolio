@@ -8,52 +8,52 @@
         </q-scroll-area>
       </q-tab-panel>
 
-      <q-tab-panel name="projects" class="text-center">
+      <q-tab-panel name="projects" class="text-center q-px-none">
         <div class="text-h4 q-mb-md">
           Projects
           <q-icon name="terminal" color="primary" size="37px" />
         </div>
-        <q-scroll-area class="q-pa-md" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
+        <q-scroll-area class="q-pa-xs" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
           <ProjectsSlide />
         </q-scroll-area>
       </q-tab-panel>
 
-      <q-tab-panel name="technologies" class="text-center">
+      <q-tab-panel name="technologies" class="text-center q-px-none">
         <div class="text-h4 q-mb-md">
           Technologies
           <q-icon name="memory" color="primary" size="37px" />
         </div>
-        <q-scroll-area class="q-pa-md" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
+        <q-scroll-area class="q-pa-xs" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
           <TechnologiesSlide />
         </q-scroll-area>
       </q-tab-panel>
 
-      <q-tab-panel name="devTools" class="text-center">
+      <q-tab-panel name="tools" class="text-center q-px-none">
         <div class="text-h4 q-mb-md">
-          Dev Tools
+          Tools
           <q-icon name="build" color="primary" size="37px" />
         </div>
-        <q-scroll-area class="q-pa-md" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
-          <DevToolsSlide />
+        <q-scroll-area class="q-pa-xs" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
+          <ToolsSlide />
         </q-scroll-area>
       </q-tab-panel>
 
-      <q-tab-panel name="about" class="text-center">
+      <q-tab-panel name="about" class="text-center q-px-none">
         <div class="text-h4 q-mb-md">
           About
           <q-icon name="person" color="primary" size="37px" />
         </div>
-        <q-scroll-area class="q-pa-md" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
+        <q-scroll-area class="q-pa-sm" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
           <AboutSlide />
         </q-scroll-area>
       </q-tab-panel>
 
-      <q-tab-panel name="contact" class="text-center">
+      <q-tab-panel name="contact" class="text-center q-px-none">
         <div class="text-h4 q-mb-md">
           Contact
           <q-icon name="mail" color="primary" size="37px" />
         </div>
-        <q-scroll-area class="q-pa-md" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
+        <q-scroll-area class="q-pa-xs" :thumb-style="thumbStyle" :bar-style="barStyle" style="width: 100%; height: 80vh">
           <ContactSlide />
         </q-scroll-area>
       </q-tab-panel>
@@ -62,12 +62,12 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed } from "vue";
 import { useNavBarStore } from "stores/navBarStore";
 import HomeSlide from "../components/HomeSlide";
 import ProjectsSlide from "../components/ProjectsSlide";
 import TechnologiesSlide from "../components/TechnologiesSlide";
-import DevToolsSlide from "../components/DevToolsSlide";
+import ToolsSlide from "../components/ToolsSlide";
 import AboutSlide from "../components/AboutSlide";
 import ContactSlide from "../components/ContactSlide";
 import { customScrollBar } from "src/composables/scrollBarStyles";

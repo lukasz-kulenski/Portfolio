@@ -1,31 +1,10 @@
 <template>
   <div class="row">
-    <q-carousel
-      v-model="project"
-      transition-prev="slide-left"
-      transition-next="slide-right"
-      transition-duration="600"
-      swipeable
-      animated
-      control-color="primary"
-      padding
-      arrows
-      infinite
-      class="text-black col-11"
-      style="margin: 0 auto"
-    >
-      <q-carousel-slide
-        v-for="project in projectsItems"
-        :key="project.title"
-        :name="project.name"
-        class="column no-wrap flex-center"
-      >
-        <q-card
-          flat
-          bordered
-          class="my-card"
-          style="min-width: 240px; max-width: 450px"
-        >
+    <q-carousel v-model="project" transition-prev="slide-left" transition-next="slide-right" transition-duration="600"
+      swipeable animated control-color="primary" padding arrows infinite class="text-black col-12" style="margin: 0 auto">
+      <q-carousel-slide v-for="project in  projectsItems " :key="project.title" :name="project.name"
+        class="column no-wrap flex-center">
+        <q-card flat bordered class="my-card" style="max-width: 450px">
           <q-card-section>
             <div class="row items-center no-wrap">
               <div class="col">
@@ -55,25 +34,19 @@
           <q-card-section class="row q-pa-sm">
             <div class="text-left q-gutter-sm flex">
               <a :href="project.githubLink" target="_blank">
-                <q-img
-                  src="../assets/github.svg"
-                  style="width: 30px; height: 30px"
-                />
+                <q-img src="../assets/github.svg" style="width: 28px; height: 28px" />
               </a>
 
               <a :href="project.netlifyLink" target="_blank">
-                <q-img
-                  src="../assets/netlify.svg"
-                  style="width: 30px; height: 30px"
-                />
+                <q-img src="../assets/netlify.svg" style="width: 28px; height: 28px" />
               </a>
             </div>
 
             <div>
-              <span class="absolute-bottom-right q-pa-sm">{{
+              <span class="absolute-bottom-right q-pa-xs text-caption">{{
                 project.completed
-                  ? "project completed"
-                  : "project in development"
+                ? "project completed"
+                : "project in development"
               }}</span>
             </div>
           </q-card-section>

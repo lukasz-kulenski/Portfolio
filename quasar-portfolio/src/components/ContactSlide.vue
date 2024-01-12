@@ -16,7 +16,7 @@
           <q-input dense outlined rounded v-model="message.email" type="email" lazy-rules label="Email" name="email"
             :rules="[(val) => (val && val.length > 0) || 'Please type something']" />
 
-          <q-input dense outlined rounded autogrow counter v-model="message.content" lazy-rules label="Message"
+          <q-input dense outlined rounded counter v-model="message.content" type="textarea" lazy-rules label="Message"
             name="message" :rules="[(val) => (val && val.length > 0) || 'Please type something']" />
 
           <div class="text-center">
